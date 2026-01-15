@@ -1,0 +1,139 @@
+[gd_scene load_steps=17 format=3 uid="uid://xdfg0cldlqmg"]
+
+[ext_resource type="Script" uid="uid://ba7cfcwnevyoe" path="res://Scripts/Characters/Hitotsuki/HitotsukiMain.cs" id="1_awm6n"]
+[ext_resource type="Texture2D" uid="uid://cugunqkjhxdgp" path="res://Sprites/Hitotsuki/Default/Default.png" id="1_qnofv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awm6n"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(0, 0, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t672a"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(18, 0, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eoau"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(36, 0, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dk0w"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(0, 96, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7boe"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(18, 96, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ofv"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(36, 96, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwb8r"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(0, 64, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slgf3"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(18, 64, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3ra5"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(36, 64, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vseco"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(0, 32, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooobp"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(18, 32, 18, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd06u"]
+atlas = ExtResource("1_qnofv")
+region = Rect2(36, 32, 18, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qsdix"]
+animations = [{
+"frames": [{
+"duration": 0.31,
+"texture": SubResource("AtlasTexture_awm6n")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_t672a")
+}, {
+"duration": 0.31,
+"texture": SubResource("AtlasTexture_awm6n")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_3eoau")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 0.31,
+"texture": SubResource("AtlasTexture_5dk0w")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_l7boe")
+}, {
+"duration": 0.31,
+"texture": SubResource("AtlasTexture_5dk0w")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_j7ofv")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 0.31,
+"texture": SubResource("AtlasTexture_mwb8r")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_slgf3")
+}, {
+"duration": 0.31,
+"texture": SubResource("AtlasTexture_mwb8r")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_v3ra5")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 0.31,
+"texture": SubResource("AtlasTexture_vseco")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_ooobp")
+}, {
+"duration": 0.31,
+"texture": SubResource("AtlasTexture_vseco")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_gd06u")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou861"]
+size = Vector2(64, 64)
+
+[node name="Hitotsuki" type="CharacterBody2D"]
+script = ExtResource("1_awm6n")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -32)
+scale = Vector2(4.0000005, 4)
+sprite_frames = SubResource("SpriteFrames_qsdix")
+animation = &"Down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ou861")
