@@ -33,6 +33,8 @@ public partial class HitotsukiMain
 		
 		if(InputDir != Vector2.Zero)
 		{
+			//Animation Direction Logic
+			AnimationDirection();
 			TryMove();						
 		}
 		//Animation end and steps logic
@@ -49,7 +51,8 @@ public partial class HitotsukiMain
 
 		if(Ray.IsColliding()) return;
 
-		OnMove();
+		OnMove();	
+
 	}
 
 	public void OnMove()
@@ -60,11 +63,9 @@ public partial class HitotsukiMain
 		steps = (steps +1) % 2;
 
 		var Tween = CreateTween();
-		Tween.TweenProperty(this, "position", Position + InputDir * TileSize, 0.2);
+		Tween.TweenProperty(this, "position", Position + InputDir * TileSize, 0.3);
 		Tween.TweenCallback(Callable.From(FinishMove));
 		
-		//Animation Direction Logic
-        AnimationDirection();
 		//Animation Start Logic
 		AnimationStart();
 	}

@@ -12,8 +12,6 @@ public partial class HitotsukiMain
 		}
 	}
 
-
-	//when "mashing" the keys or pressing a movement key right when FinishMove() start, the AnimationLogic() for some reason will output the same frame as last time
 	public void AnimationEnd()
 	{
 		Animation.Stop();
