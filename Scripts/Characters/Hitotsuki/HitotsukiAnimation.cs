@@ -16,7 +16,7 @@ public partial class HitotsukiMain
 	{
 		Animation.Stop();
 		AnimationLogic();
-
+		GD.Print(Animation.Frame);
 	}
 
 	public void AnimationLogic()
@@ -33,21 +33,32 @@ public partial class HitotsukiMain
 
 	public void AnimationDirection()
 	{
+		var Progress = Animation.FrameProgress;
+		var Frame = Animation.Frame;
 		if(InputDir == new Vector2(0, 1))
 		{
 			Animation.Animation = "Down";
+			Animation.SetFrameAndProgress(Frame, Progress);
 		}
 		else if(InputDir == new Vector2(0, -1))
 		{
 			Animation.Animation = "Up";
+			Animation.SetFrameAndProgress(Frame, Progress);
 		}
 		else if(InputDir == new Vector2(1, 0))
 		{
 			Animation.Animation = "Right";
+			Animation.SetFrameAndProgress(Frame, Progress);
 		}
 		else if(InputDir == new Vector2(-1, 0))
 		{
 			Animation.Animation = "Left";
+			Animation.SetFrameAndProgress(Frame, Progress);
+		}
+		else
+		{
+			Animation.Animation = "Down";
+			Animation.SetFrameAndProgress(Frame, Progress);
 		}
 	}
 }

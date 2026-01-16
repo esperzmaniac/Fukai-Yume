@@ -37,11 +37,7 @@ public partial class HitotsukiMain
 			AnimationDirection();
 			TryMove();						
 		}
-		//Animation end and steps logic
-		else if(Animation.IsPlaying())
-		{
-			AnimationEnd();	
-		}
+		
 	}
 
 	public void TryMove()

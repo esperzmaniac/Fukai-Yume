@@ -13,6 +13,12 @@ public partial class HitotsukiMain : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         GetInput();
+
+        //Animation end and steps logic
+		if(Animation.IsPlaying() && InputDir == Vector2.Zero)
+		{
+			AnimationEnd();	
+		}
     }
 
 }
