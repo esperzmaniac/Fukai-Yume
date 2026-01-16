@@ -10,5 +10,17 @@ public partial class HitotsukiMain
 		{
 			InputDir = new Vector2(0, -1);
 		}
+		else if(Input.IsActionPressed("ui_down"))
+		{
+			InputDir = new Vector2(0, 1);
+		}
+		else if(Input.IsActionPressed("ui_left"))
+		{
+			InputDir = new Vector2(1, 0);
+		}
+		else if(Input.IsActionPressed("ui_right"))
+		{
+			InputDir = new Vector2(-1, 0);
+		}
 	}
 }
