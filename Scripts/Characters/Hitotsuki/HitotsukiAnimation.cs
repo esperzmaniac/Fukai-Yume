@@ -9,7 +9,6 @@ public partial class HitotsukiMain
 		if(!Animation.IsPlaying())
 		{
 			Animation.Play();
-			GD.Print("started");
 		}
 	}
 
@@ -20,7 +19,6 @@ public partial class HitotsukiMain
 		Animation.Stop();
 		AnimationLogic();
 
-		GD.Print("stopped");
 	}
 
 	public void AnimationLogic()
@@ -33,8 +31,6 @@ public partial class HitotsukiMain
 		{
 			Animation.Frame = 2;
 		}
-
-		GD.Print(steps);
 	}
 
 	public void AnimationDirection()
