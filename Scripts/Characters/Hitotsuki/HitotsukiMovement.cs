@@ -31,7 +31,7 @@ public partial class HitotsukiMain
 		}
 		if(InputDir != Vector2.Zero)
 		{
-			TryMove();			
+			TryMove();						
 		}
 	}
 
@@ -50,7 +50,7 @@ public partial class HitotsukiMain
 		moving = true;
 
 		var Tween = CreateTween();
-		Tween.TweenProperty(this, "position", Position + InputDir * TileSize, 2.2);
+		Tween.TweenProperty(this, "position", Position + InputDir * TileSize, 0.2);
 		Tween.TweenCallback(Callable.From(FinishMove));
 	}
 

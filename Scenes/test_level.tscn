@@ -1,8 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwv82hx35fas7"]
+[gd_scene load_steps=3 format=3 uid="uid://bwv82hx35fas7"]
 
 [ext_resource type="PackedScene" uid="uid://xdfg0cldlqmg" path="res://Scenes/Characters/Hitotsuki/hitotsuki.tscn" id="1_iti4p"]
+[ext_resource type="Texture2D" uid="uid://bckue6kd2l0j3" path="res://icon.svg" id="2_dtjkg"]
 
 [node name="Test Level" type="Node2D"]
 
 [node name="Hitotsuki" parent="." instance=ExtResource("1_iti4p")]
 position = Vector2(96, 96)
+TileSize = 64
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(224, 160)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dtjkg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(288, 160)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dtjkg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(352, 160)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dtjkg")
