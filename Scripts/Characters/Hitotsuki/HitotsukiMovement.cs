@@ -13,6 +13,7 @@ public partial class HitotsukiMain
 		if(moving) return;
 
 		InputDir = Vector2.Zero;
+
 		if (Input.IsActionPressed("ui_up"))
 		{
 			InputDir = new Vector2(0, -1);
@@ -29,9 +30,14 @@ public partial class HitotsukiMain
 		{
 			InputDir = new Vector2(1, 0);
 		}
+		
 		if(InputDir != Vector2.Zero)
 		{
 			TryMove();						
+		}
+		else if(Animation.IsPlaying())
+		{
+			AnimationEnd();	
 		}
 	}
 
@@ -48,10 +54,18 @@ public partial class HitotsukiMain
 	public void OnMove()
 	{
 		moving = true;
+		
+		//Steps Counter
+		steps = (steps +1) % 2;
 
 		var Tween = CreateTween();
 		Tween.TweenProperty(this, "position", Position + InputDir * TileSize, 0.2);
 		Tween.TweenCallback(Callable.From(FinishMove));
+		
+		//Animation Direction Logic
+        AnimationDirection();
+		//Animation Start Logic
+		AnimationStart();
 	}
 
 	public void FinishMove()

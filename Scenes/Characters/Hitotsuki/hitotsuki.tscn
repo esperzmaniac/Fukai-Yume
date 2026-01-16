@@ -133,7 +133,7 @@ texture_filter = 1
 position = Vector2(0, -32)
 scale = Vector2(4.0000005, 4)
 sprite_frames = SubResource("SpriteFrames_qsdix")
-animation = &"Down"
+animation = &"Up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ou861")
