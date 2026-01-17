@@ -7,6 +7,11 @@ public partial class HitotsukiMain : CharacterBody2D
     {
         Ray = GetNode<RayCast2D>("RayCast2D");
         Animation = GetNode<AnimatedSprite2D>("Animation");
+        InteractionArea = GetNode<Area2D>("Interactions/Area2D");
+
+        //Signals
+        InteractionArea.AreaEntered += OnAreaEntered;
+        InteractionArea.AreaExited += OnAreaExited;
     }
 
 

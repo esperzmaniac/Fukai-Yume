@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://xdfg0cldlqmg"]
+[gd_scene load_steps=18 format=3 uid="uid://xdfg0cldlqmg"]
 
 [ext_resource type="Script" uid="uid://ba7cfcwnevyoe" path="res://Scripts/Characters/Hitotsuki/HitotsukiMain.cs" id="1_awm6n"]
 [ext_resource type="Texture2D" uid="uid://cugunqkjhxdgp" path="res://Sprites/Hitotsuki/Default/Default.png" id="1_qnofv"]
@@ -125,6 +125,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ou861"]
 size = Vector2(64, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awm6n"]
+size = Vector2(48, 48)
+
 [node name="Hitotsuki" type="CharacterBody2D"]
 script = ExtResource("1_awm6n")
 
@@ -133,9 +136,18 @@ texture_filter = 1
 position = Vector2(0, -32)
 scale = Vector2(4.0000005, 4)
 sprite_frames = SubResource("SpriteFrames_qsdix")
-animation = &"Up"
+animation = &"Down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ou861")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Interactions" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+shape = SubResource("RectangleShape2D_awm6n")
