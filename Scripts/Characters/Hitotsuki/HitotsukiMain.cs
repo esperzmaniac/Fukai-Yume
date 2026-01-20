@@ -12,6 +12,9 @@ public partial class HitotsukiMain : CharacterBody2D
         //Signals
         InteractionArea.AreaEntered += OnAreaEntered;
         InteractionArea.AreaExited += OnAreaExited;
+        _customSignals = GetNode<CustomSignals>("/root/CustomSignals");
+        // remember to delete, this is just a test
+        _customSignals.InteractSignal += SignalCheck;
     }
 
 
@@ -25,5 +28,12 @@ public partial class HitotsukiMain : CharacterBody2D
 			AnimationEnd();	
 		}
     }
+
+    public override void _Input(InputEvent @event)
+    {
+        //Interaction
+        Interact();
+    }
+
 
 }

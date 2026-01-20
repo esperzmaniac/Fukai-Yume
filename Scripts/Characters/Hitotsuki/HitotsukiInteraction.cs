@@ -2,14 +2,33 @@ using Godot;
 
 public partial class HitotsukiMain
 {
+	public CustomSignals _customSignals;
 	public Area2D InteractionArea;
-
+	public bool CanInteract = false;
 	public void OnAreaEntered(Area2D area)
 	{
-		GD.Print("Area Entered");
+		CanInteract = true;
 	}
 	public void OnAreaExited(Area2D area)
 	{
-		GD.Print("Area Exitted");
+		CanInteract = false;
 	}
+
+	//interact logic
+    public void Interact()
+	{
+		if (CanInteract)
+		{
+			if (Input.IsActionJustPressed("Interact"))
+			{
+				_customSignals.EmitInteract();
+			}
+		}
+	}
+	//remember to delete, this is just a test
+	public void SignalCheck()
+	{
+		GD.Print("what");
+	}
+
 }
