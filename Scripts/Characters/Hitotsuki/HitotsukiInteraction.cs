@@ -25,10 +25,4 @@ public partial class HitotsukiMain
 			}
 		}
 	}
-	//remember to delete, this is just a test
-	public void SignalCheck()
-	{
-		GD.Print("what");
-	}
-
 }

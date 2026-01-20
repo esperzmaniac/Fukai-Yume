@@ -12,9 +12,7 @@ public partial class HitotsukiMain : CharacterBody2D
         //Signals
         InteractionArea.AreaEntered += OnAreaEntered;
         InteractionArea.AreaExited += OnAreaExited;
-        _customSignals = GetNode<CustomSignals>("/root/CustomSignals");
-        // remember to delete, this is just a test
-        _customSignals.InteractSignal += SignalCheck;
+        _customSignals = GetNode<CustomSignals>("/root/CustomSignals"); 
     }
 
 
