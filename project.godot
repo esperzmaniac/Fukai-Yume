@@ -18,6 +18,13 @@ config/icon="res://icon.svg"
 
 CustomSignals="*res://Scripts/CustomSignals/CustomSignals.cs"
 
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="Fukai Yume"

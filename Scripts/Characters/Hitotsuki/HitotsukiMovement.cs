@@ -55,19 +55,17 @@ public partial class HitotsukiMain
 	{
 		moving = true;
 		
-		//Steps Counter
-		steps = (steps +1) % 2;
-
-		var Tween = CreateTween();
-		Tween.TweenProperty(this, "position", Position + InputDir * TileSize, 0.3);
-		Tween.TweenCallback(Callable.From(FinishMove));
-		
 		//Animation Start Logic
 		AnimationStart();
+
+		var Tween = CreateTween();
+		Tween.TweenProperty(this, "position", MoveEndPos, 0.3);
+		Tween.TweenCallback(Callable.From(FinishMove));
 	}
 
 	public void FinishMove()
 	{
 		moving = false;
+		leftFoot = !leftFoot;
 	}
 }
