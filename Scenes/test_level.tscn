@@ -10,6 +10,7 @@
 size = Vector2(458.99902, 417.00012)
 
 [node name="Test Level" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Hitotsuki" parent="." instance=ExtResource("1_iti4p")]
 position = Vector2(96, 96)
