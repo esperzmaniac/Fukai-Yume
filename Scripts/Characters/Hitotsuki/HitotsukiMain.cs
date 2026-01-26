@@ -30,3 +30,5 @@ public partial class HitotsukiMain : CharacterBody2D
         Interact();
     }
 }
+
+//happy new system
