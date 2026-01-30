@@ -2,7 +2,7 @@ using Godot;
 
 public partial class HitotsukiMain : CharacterBody2D
 {
-    // Assigning objects
+    // Assigning object
     public override void _Ready()
     {
         Ray = GetNode<RayCast2D>("RayCast2D");
@@ -12,7 +12,7 @@ public partial class HitotsukiMain : CharacterBody2D
         //Signals
         InteractionArea.AreaEntered += OnAreaEntered;
         InteractionArea.AreaExited += OnAreaExited;
-        _customSignals = GetNode<CustomSignals>("/root/CustomSignals"); 
+        _customSignals = GetNode<CustomSignals>("/root/CustomSignals");
     }
 
 
@@ -22,6 +22,7 @@ public partial class HitotsukiMain : CharacterBody2D
         
         //Animation while playing logic
         if(moving) FrameProgressLogic();
+        //lmao
     }
 
     public override void _Input(InputEvent @event)
