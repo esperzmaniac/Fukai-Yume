@@ -7,7 +7,8 @@ public partial class HitotsukiMain
 	public Vector2 MoveStartPos;
 	public Vector2 MoveEndPos;
 	public bool leftFoot = true;
-	public void AnimationStart()
+	
+  public void AnimationStart()
 	{
 		MoveStartPos = Position;
 		MoveEndPos = Position + InputDir * TileSize;
@@ -17,24 +18,24 @@ public partial class HitotsukiMain
 
 	public void FrameProgressLogic()
 	{
-		float TotalDistance = MoveStartPos.DistanceTo(MoveEndPos);
-        float currentDistance = MoveStartPos.DistanceTo(Position);
+	  float TotalDistance = MoveStartPos.DistanceTo(MoveEndPos);
+    float currentDistance = MoveStartPos.DistanceTo(Position);
+    float Progress = currentDistance / TotalDistance;
 
-        float Progress = currentDistance / TotalDistance;
-
-        if (Progress < 0.33f)
-        {
-            Animation.Frame = 0;
-        }
-        else if (Progress < 0.80f)
-        {
-            Animation.Frame = leftFoot ? 1 : 2;
-        }
-        else
-        {
-            Animation.Frame = 0;
-        }
+    if (Progress < 0.33f)
+    {
+      Animation.Frame = 0;
+    }
+    else if (Progress < 0.80f)
+    {
+      Animation.Frame = leftFoot ? 1 : 2;
+    }
+    else
+    {
+      Animation.Frame = 0;
+    }
 	}
+
 	public void AnimationDirection()
 	{
 		if(InputDir == new Vector2(0, 1))
