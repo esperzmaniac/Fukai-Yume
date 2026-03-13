@@ -21,7 +21,7 @@ public partial class HitotsukiMain
 	  float TotalDistance = MoveStartPos.DistanceTo(MoveEndPos);
     float currentDistance = MoveStartPos.DistanceTo(Position);
     float Progress = currentDistance / TotalDistance;
-
+//yo fuck this shit gang
     if (Progress < 0.33f)
     {
       Animation.Frame = 0;
